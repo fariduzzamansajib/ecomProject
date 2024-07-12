@@ -1,0 +1,167 @@
+<!-- ----------------------- navbar ------------------- -->
+
+<nav class="navbar navbar-expand-md bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav justify-content-end ms-auto">
+
+                <li class="nav-item">
+                    <button class="btn btn-danger fw-bolder me-1 text-light" type="submit" routerLink="/login">Admin
+                        Login</button>
+                </li>
+
+                <li class="nav-item ms-3">
+                    <button class="btn btn-success" (click)="showcart2()"><i class="bi bi-cart-plus"
+                            title="Show Cart">{{cartallproducttotalQuantity}}</i></button>
+                </li>
+
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+<!-- -------------------------------------------------- -->
+<!-- <section style="text-align: right;">
+    <button class="btn btn-success" (click)="showcart2()"><i class="bi bi-cart-plus"
+            title="Show Cart">{{cartallproducttotalQuantity}}</i></button>
+</section> -->
+
+<!-- <section class="container">
+
+    <table class="table table-striped">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Category</th>
+            <th>Unitprice</th>
+            <th>Stock</th>
+
+        </tr>
+        <tbody>
+           
+            <tr *ngFor="let i of products; ">
+            
+                <td> {{i.productid}}</td>
+                <td> {{i.productname}}</td>
+                <td> {{i.productbrand}}</td>
+                <td> {{i.producctategory}}</td>
+                <td> {{i.productunitprice}}</td>
+                <td> {{i.productstock}}</td>
+                <td><a routerLink='/details/{{i.productid}}'>Details</a></td>
+                <td (click)="addtocart(i)">Add to cart</td>
+            </tr>
+        </tbody>
+
+    </table>
+</section> -->
+<!-- ------------------------------ Marquee ---------------------------------- -->
+<div class="my-2 ">
+
+    <marquee class="marq  fw-bolder text-danger h3 shadow">SHOW ALL PRODUCTS ! SHOW ALL PRODUCTS ! SHOW ALL PRODUCTS !
+        SHOW ALL PRODUCTS ! SHOW ALL PRODUCTS ! SHOW ALL PRODUCTS ! SHOW ALL PRODUCTS ! SHOW ALL PRODUCTS ! SHOW ALL
+        PRODUCTS !!!
+    </marquee>
+
+</div>
+<br><br>
+<section class="container">
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col" *ngFor="let i of products; ">
+            <img src="{{i.photos}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Name:{{i.productname}}</h5>
+                <p class="card-text">ID:{{i.productid}}</p>
+                <p class="card-text">Brand:{{i.productbrand}}</p>
+                <p class="card-text">Category:{{i.productcategory}}</p>
+                <p class="card-text">Price:{{i.productunitprice}}</p>
+                <p class="card-text">Stock:{{i.productstock}}</p>
+                <p class="card-text">Description: This is a longer card with supporting text below as a natural lead-in
+                    to additional content. This content is a little bit longer.</p>
+                <p class="card-text"><a routerLink='/details/{{i.productid}}'>Details</a></p>
+                <button class="btn btn-primary" (click)="addtocart(i)">Add to cart</button>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+
+<!-- <div style="margin: 20px;;">
+    <h1 style="text-align: center;">CART ITEMS</h1>
+</div>
+
+
+<section class="container" *ngIf="productsincart.length>0">
+    <table class="table table-striped">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Category</th>
+            <th>Unitprice</th>
+            <th>Stock</th>
+            <th>Quantity</th>
+            <th></th>
+            <th></th>
+            <th>Price</th>
+
+        </tr>
+        <tbody>
+            <tr *ngFor="let i of productsincart">
+               
+                <td> {{i.productid}}</td>
+                <td> {{i.productname}}</td>
+                <td> {{i.productbrand}}</td>
+                <td> {{i.producctategory}}</td>
+                <td> {{i.productunitprice}}</td>
+                <td> {{i.productstock}}</td>
+                <td> {{i.qty}}</td>
+                <td (click)="increasetocart(i)">+</td>
+                <td (click)="decreasetocart(i)">-</td>
+                <td> {{i.itemtotalprice}}</td>
+                <td (click)="removefromcart(i)">Remove from cart</td>
+            </tr>
+            <tr *ngIf="cartallproducttotalPrice>0">
+                <td> </td>
+                <td> </td>
+                <td></td>
+                <td> </td>
+                <td> </td>
+                <td ></td>
+                <td></td>
+                <td>Total Price: {{cartallproducttotalPrice}}</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    
+
+</section>
+
+
+
+<section class="container">
+
+    <form (submit)="buycart()">
+        <div class="mb-3">
+          <label for="invoicenumber" class="form-label">Invoicenumber</label>
+          <input type="text" class="form-control" id="invoicenumber" name="invoicenumber" [(ngModel)]="invoicenumber" >
+        
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</section>
+ -->

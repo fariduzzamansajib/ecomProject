@@ -1,0 +1,115 @@
+<section style="text-align: center;">
+    <a routerLink='/showallstudents'>Add More Products</a>
+</section>
+<div style="margin: 20px;;">
+    <h1 style="text-align: center;">CART ITEMS</h1>
+</div>
+
+
+<section class="container" *ngIf="productsincart.length>0">
+    <table class="table table-striped">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Category</th>
+            <th>Unitprice</th>
+            <th>Stock</th>
+            <th>Quantity</th>
+            <th></th>
+            <th></th>
+            <th>Price</th>
+
+        </tr>
+        <tbody>
+            <tr *ngFor="let i of productsincart">
+                <!-- productid, productname, productbrand, producctategory, productunitprice, productstock -->
+                <!-- invoicedetailserial, productid, productname, productbrand, productcategory, productunitprice, itemquantity, itemtotalprice, invoicenumber -->
+                <td> {{i.productid}}</td>
+                <td> {{i.productname}}</td>
+                <td> {{i.productbrand}}</td>
+                <td> {{i.productcategory}}</td>
+                <td> {{i.productunitprice}}</td>
+                <td> {{i.productstock}}</td>
+                <td> {{i.qty}}</td>
+                <td (click)="increasetocart(i)">+</td>
+                <td (click)="decreasetocart(i)">-</td>
+                <td> {{i.itemtotalprice}}</td>
+                <td (click)="removefromcart(i)">Remove from cart</td>
+            </tr>
+            <tr *ngIf="cartallproducttotalPrice>0">
+                <td> </td>
+                <td> </td>
+                <td></td>
+                <td> </td>
+                <td>Total Quantity: {{cartallproducttotalQuantity}}</td>
+                <td></td>
+                <td></td>
+                <td>Total Price: {{cartallproducttotalPrice}}</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</section>
+
+<section class="container" style="text-align: center;" *ngIf="productsincart.length>0;">
+    <button class="btn btn-primary" (click)="purchasedetails()" style="text-align: center;">Purchase these Products
+        now</button>
+</section>
+<section class="container" *ngIf="showpurchasesection;">
+
+    <!-- invoicenumber, invoicedate, totalquantity, totalprice, customername, customerphone, customerid -->
+    <form (submit)="buycart()">
+        <div class="mb-3">
+            <label for="customerphone" class="form-label">phoneNumber</label>
+            <input type="text" class="form-control" id="customerphone" name="customerphone" [(ngModel)]="customerphone">
+
+        </div>
+        <div class="mb-3">
+            <label for="transactionnumber" class="form-label">Transactionnumber</label>
+            <input type="text" class="form-control" id="transactionnumber" name="transactionnumber"
+                [(ngModel)]="transactionnumber">
+
+        </div>
+        <div class="mb-3">
+            <label for="totalquantity" class="form-label">totalquantity</label>
+            <input type="text" class="form-control" id="totalquantity" name="totalquantity" [(ngModel)]="totalquantity">
+
+        </div>
+        <div class="mb-3">
+            <label for="totalprice" class="form-label">totalprice</label>
+            <input type="text" class="form-control" id="totalprice" name="totalprice" [(ngModel)]="totalprice">
+
+        </div>
+        <div class="mb-3">
+            <label for="invoicedate" class="form-label">invoicedate</label>
+            <input type="date" class="form-control" id="invoicedate" name="invoicedate" [(ngModel)]="invoicedate">
+
+        </div>
+
+        <div class="mb-3">
+            <label for="customername" class="form-label">customername</label>
+            <input type="text" class="form-control" id="customername" name="customername" [(ngModel)]="customername">
+
+        </div>
+
+        <div class="mb-3">
+            <label for="customerid" class="form-label">customerid</label>
+            <input type="text" class="form-control" id="customerid" name="customerid" [(ngModel)]="customerid">
+
+        </div>
+
+        <button [disabled]="paymentvarified==false" type="submit" class="btn btn-primary m-3">Confirm Order</button>
+    </form>
+    <button type="button" (click)="varifypayment()" class="btn btn-primary m-3">Varify Payment</button>
+
+
+
+    <!-- <ng-template #templateName>
+        If isValid is false
+    </ng-template> -->
+
+
+</section>

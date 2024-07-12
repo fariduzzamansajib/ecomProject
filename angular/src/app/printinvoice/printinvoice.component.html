@@ -1,0 +1,75 @@
+<p>printinvoice works!</p>
+<section style="text-align: center;">
+    <h1>Invoice Number</h1>
+    <h2>{{invoicedetails[0].invoicenumber}} </h2>
+</section>
+
+<section class="container" *ngIf="invoicedetails.length>0">
+    <table class="table table-striped" style="margin-left: 50ps; margin-right: 50px;">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Category</th>
+            <th>Unitprice</th>
+            <th>Quantity</th>
+            <th>Price</th>
+
+        </tr>
+        <tbody>
+            <tr *ngFor="let i of invoicedetails">
+               
+                <td> {{i.productid}}</td>
+                <td> {{i.productname}}</td>
+                <td> {{i.productbrand}}</td>
+                <td> {{i.productcategory}}</td>
+                <td> {{i.productunitprice}}</td>
+                <td> {{i.itemquantity}}</td>
+                <td> {{i.itemtotalprice}}</td>
+ 
+            </tr>
+        </tbody>
+    </table>
+
+
+</section>
+
+
+<section style="text-align: center;">
+    <h1>Transaction Informatin</h1>
+    <h2> </h2>
+</section>
+<section class="container">
+    <table class="table table-striped" style="margin-left: 50ps; margin-right: 50px;">
+        <tr>
+            <th>transactionnumber</th>
+            <th>invoicedate</th>
+            <th>totalquantity</th>
+            <th>totalprice</th>
+            <th>customername</th>
+            <th>customerphone</th>
+            <th>customerid</th>
+
+        </tr>
+        <tbody>
+            <tr>
+               
+                <td> {{invoice.transactionnumber}}</td>
+                <td> {{invoice.invoicedate}}</td>
+                <td> {{invoice.totalquantity}}</td>
+                <td> {{invoice.totalprice}}</td>
+                <td> {{invoice.customername}}</td>
+                <td> {{invoice.customerphone}}</td>
+                <td> {{invoice.customerid}}</td>
+ 
+            </tr>
+        </tbody>
+    </table>
+
+
+</section>
+<section style="text-align: center;">
+    <button class="btn btn-primary" (click)="printinvoice()">printinvoice</button>
+  
+</section>
+

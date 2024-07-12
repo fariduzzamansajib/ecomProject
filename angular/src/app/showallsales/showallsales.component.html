@@ -1,0 +1,38 @@
+<app-admin-header></app-admin-header>
+<!-- ------------------------------------------------------------------------------------------------ -->
+<div class="row">
+  <div class="col-md-3">
+    <app-admin-sidebar></app-admin-sidebar>
+  </div>
+
+
+
+  <div class="col-md-9">
+    <div class="container my-5">
+      <h1 class="text-center fw-bolder pb-2">Show All Sales Product</h1>
+      <table class="table stripe">
+        <tr class="bg-primary text-light">
+          <th class="fw-bolder">Product Id</th>
+          <th>Product Name</th>
+          <th>Product Brand</th>
+          <th>Product Category</th>
+          <th>Product Unit Price</th>
+          <th>Item Quantity</th>
+          <th>Item Total Price</th>
+          <th>Invoice Number</th>
+        </tr>
+
+        <tr *ngFor="let i of getdata" class="bg-primary-subtle">
+          <td>{{i.productid}}</td>
+          <td>{{i.productname}}</td>
+          <td>{{i.productbrand}}</td>
+          <td>{{i.productcategory}}</td>
+          <td>{{i.productunitprice}}</td>
+          <td>{{i.itemquantity}}</td>
+          <td>{{i.itemtotalprice}}</td>
+          <td>{{i.invoicenumber}}</td>
+        </tr>
+      </table>
+    </div>
+
+  </div>

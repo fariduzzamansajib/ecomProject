@@ -1,0 +1,53 @@
+<app-admin-header></app-admin-header>
+<!-- ------------------------------------------------------------------- -->
+<div class="row">
+  <div class="col-md-3">
+    <app-admin-sidebar></app-admin-sidebar>
+  </div>
+
+  <div class="col-md-9">
+    <br><br>
+    <section class="container">
+      <!-- productid, productname, productbrand, producctategory, productunitprice, productstock -->
+      <h1 class="text-center">Add Product</h1>
+      <form (ngSubmit)="getStudentsave()">
+        <div class="mb-3">
+          <label for="productid" class="form-label"> Product Id</label>
+          <input type="text" class="form-control" id="productid" name="productid" [(ngModel)]="productid">
+
+        </div>
+        <div class="mb-3">
+          <label for="productname" class="form-label">Product Name</label>
+          <input type="text" class="form-control" id="productname" name="productname" [(ngModel)]="productname">
+        </div>
+        <div class="mb-3">
+          <label for="productbrand" class="form-label">Product Brand</label>
+          <input type="text" class="form-control" id="productbrand" name="productbrand" [(ngModel)]="productbrand">
+        </div>
+        <div class="mb-3">
+          <label for="producctategory" class="form-label">Product Category</label>
+          <input type="text" class="form-control" id="producctategory" name="producctategory"
+            [(ngModel)]="producctategory">
+        </div>
+        <div class="mb-3">
+          <label for="productunitprice" class="form-label">Product Unitprice</label>
+          <input type="text" class="form-control" id="productunitprice" name="productunitprice"
+            [(ngModel)]="productunitprice">
+        </div>
+        <div class="mb-3">
+          <label for="productstock" class="form-label">Stock Product</label>
+          <input type="text" class="form-control" id="productstock" name="productstock" [(ngModel)]="productstock">
+        </div>
+
+        <div class="mb-3">
+          <label for="photos" class="form-label">Product Image</label>
+          <input type="text" class="form-control" id="photos" name="photos" [(ngModel)]="photos">
+        </div>
+
+        <button type="submit" class="btn btn-primary d-block m-auto">Add Product</button>
+      </form>
+    </section>
+
+  </div>
+
+</div>

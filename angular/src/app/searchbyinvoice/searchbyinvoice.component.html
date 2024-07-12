@@ -1,0 +1,78 @@
+<app-admin-header></app-admin-header>
+<!-- ------------------------------------------------------------------------------------------------ -->
+<div class="row">
+  <div class="col-md-3">
+    <app-admin-sidebar></app-admin-sidebar>
+  </div>
+
+  <div class="col-md-9">
+    <div class="container mt-5 border-0 shadow"
+      style="background-image: url('https://wpamelia.com/wp-content/uploads/2019/02/7644.jpg'); border-radius: 60px;">
+      <div class="row">
+        <div class="col-md-3">
+
+        </div>
+
+        <div class="col-md-6 my-5"><br>
+          <h3 class="text-center text-light fw-bolder">Search By Invoice Number</h3><br>
+          <div>
+            <form (ngSubmit)="searchandget()">
+              <div class="bg-warning-subtle p-3" style="border-radius: 25px;">
+
+                <div class="mb-3">
+                  <label for="invoicenumber" class="form-label fw-bolder">Invoice Number</label>
+                  <input type="text" class="form-control ps-3" id="invoicenumber" name="invoicenumber"
+                    [(ngModel)]="invoicenumber" required placeholder="enter your invoice number">
+                </div>
+
+              </div><br><br>
+              <button type="submit"
+                class="btn btn-primary text-white px-5 d-flex m-auto  fw-bolder mt-2">Search</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<br><br>
+<div class="container my-5">
+  <h1 class="text-center fw-bolder pb-2">Show Customer Information</h1>
+  <table class="table stripe">
+    <tr class="bg-primary text-light">
+      <th class="fw-bolder">Customer Name</th>
+      <th>Customer Phone</th>
+      <th>Customer Id</th>
+      <th>Invoice Number</th>
+      <th>Transaction Number</th>
+      <th>Invoice Date</th>
+      <th>Total Quantity</th>
+      <th>Total Price</th>
+    </tr>
+
+    <tr class="bg-primary-subtle">
+      <td>{{getData.customername}}</td>
+      <td>{{getData.customerphone}}</td>
+      <td>{{getData.customerid}}</td>
+      <td>{{getData.invoicenumber}}</td>
+      <td>{{getData.transactionnumber}}</td>
+      <td>{{getData.invoicedate}}</td>
+      <td>{{getData.totalquantity}}</td>
+      <td>{{getData.totalprice}}</td>
+      
+    </tr>
+  </table>
+</div>
+<br><br>
+
+
+<!-- {{getData|json}} -->

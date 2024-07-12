@@ -1,0 +1,37 @@
+<app-admin-header></app-admin-header>
+<!-- ------------------------------------------------------------------- -->
+<div class="row">
+  <div class="col-md-3">
+    <app-admin-sidebar></app-admin-sidebar>
+  </div>
+
+  <div class="col-md-9">
+    <br><br>
+    <div class="container">
+      <h1 class="text-center">Order Transaction Add</h1>
+      <form (ngSubmit)="addtransaction()">
+
+        <div class="mb-3">
+          <label for="mobilenumber" class="form-label">Customer Mobile Number</label>
+          <input type="text" class="form-control" id="mobilenumber" name="mobilenumber" [(ngModel)]="mobilenumber">
+        </div>
+
+        <div class="mb-3">
+          <label for="transactionid" class="form-label">Transaction Id</label>
+          <input type="text" class="form-control" id="transactionid" name="transactionid" [(ngModel)]="transactionid">
+        </div>
+
+        <div class="mb-3">
+          <label for="transactionamount" class="form-label">Transaction Amount(tk)</label>
+          <input type="text" class="form-control" id="transactionamount" name="transactionamount"
+            [(ngModel)]="transactionamount">
+        </div>
+
+        <button type="submit" class="btn btn-primary d-block m-auto">Add Transaction</button>
+
+      </form>
+    </div>
+
+  </div>
+
+</div>
